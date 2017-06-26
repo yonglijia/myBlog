@@ -1,19 +1,19 @@
 /**
  * Created by jiayongli on 2017/6/26.
  */
-var path = require('path');
-var ROOT_PATH = path.resolve(__dirname);
-var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
+let path = require('path');
+let ROOT_PATH = path.resolve(__dirname);
+let BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
-var merge = require('webpack-merge');
-var fs = require('fs');
+let merge = require('webpack-merge');
+let fs = require('fs');
 
-const webpack = require('webpack');
-const HtmlwebpackPlugin = require('html-webpack-plugin');
+let webpack = require('webpack');
+let HtmlwebpackPlugin = require('html-webpack-plugin');
 
-var data = JSON.parse(fs.readFileSync('views.json', 'utf-8'));
+let data = JSON.parse(fs.readFileSync('views.json', 'utf-8'));
 
-var getHtmlPluginArr = function () {
+let getHtmlPluginArr = function () {
     var pageList = data.pageList;
     var resultObj = {
         "pluginArr": [],
@@ -44,8 +44,9 @@ var getHtmlPluginArr = function () {
     }
     return resultObj;
 };
-var appJsonObj = getHtmlPluginArr();
-var commonConfig = {
+let appJsonObj = getHtmlPluginArr();
+
+let commonConfig = {
     plugins:appJsonObj.pluginArr,
 }
 module.exports = merge(commonConfig,{
