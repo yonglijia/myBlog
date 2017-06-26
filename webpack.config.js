@@ -37,7 +37,7 @@ var getHtmlPluginArr = function () {
                 chunks: [dist], //当前页面js
                 title: title,
                 template: "views/template.html",//页面模板地址
-                filename:'html/'+dist + '.html',//打包后地址
+                filename:'html/' + dist + '.html',//打包后地址
                 chunksSortMode: "dependency" //按chunks的顺序对js进行引入
             })
         );

@@ -18,7 +18,7 @@ const compiler = webpack(config);
 
 app.use(webpackDevMiddleware(compiler, {
     noInfo: true,
-    publicPath: config.output.public
+    publicPath: config.output.publicPath
 }));
 app.use(webpackHotMiddleware(compiler));
 
@@ -33,7 +33,7 @@ app.use(json())
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/public'))
 
-app.use(views(__dirname + '/build/html', {
+app.use(views('build/html', {
   extension: 'html'
 }))
 

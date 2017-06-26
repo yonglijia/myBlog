@@ -6,6 +6,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 ReactDOM.render(
-    <div>2222333221111111111111111122</div>,
+    <div>这是主页</div>,
     document.getElementById('root')
 );
