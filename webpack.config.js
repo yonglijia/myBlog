@@ -36,7 +36,7 @@ let getHtmlPluginArr = function () {
             new HtmlwebpackPlugin({
                 chunks: [dist], //当前页面js
                 title: title,
-                template: "views/template.html",//页面模板地址
+                template: "views/template.ejs",//页面模板地址
                 filename:'html/' + dist + '.html',//打包后地址
                 chunksSortMode: "dependency" //按chunks的顺序对js进行引入
             })
@@ -57,6 +57,7 @@ module.exports = merge(commonConfig,{
     },
     module: {
         loaders: [
+            {test: /\.less|\.scss|\.css$/, loaders: 'style-loader!css-loader'},
             {
                 test: /\.js$|\.jsx?$/,
                 exclude: /node_modules/,
