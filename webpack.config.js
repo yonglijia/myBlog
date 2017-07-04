@@ -4,8 +4,6 @@
 let path = require('path');
 let ROOT_PATH = path.resolve(__dirname);
 let BUILD_PATH = path.resolve(ROOT_PATH, 'build');
-let ExtractTextPlugin =require('extract-text-webpack-plugin');
-
 let merge = require('webpack-merge');
 let fs = require('fs');
 
@@ -13,9 +11,6 @@ let webpack = require('webpack');
 let HtmlwebpackPlugin = require('html-webpack-plugin');
 
 let data = JSON.parse(fs.readFileSync('views.json', 'utf-8'));
-let theme = {
-    "primary-color": "#1DA57A"
-};
 let getHtmlPluginArr = function () {
     var pageList = data.pageList;
     var resultObj = {
@@ -76,6 +71,20 @@ module.exports = merge(commonConfig,{
                     }
                 },
             },
+            {
+                test: /\.less$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    {
+                        loader:"less-loader",
+                        options:{
+                            modifyVars:{
+                                "primary-color":"#1DA57A"
+                            }
+                    }
+                }]
+            },
         ],
     },
     plugins: [
@@ -84,10 +93,6 @@ module.exports = merge(commonConfig,{
             'process.env': {
                 NODE_ENV: JSON.stringify(process.env.NODE_ENV)
             }
-        }),
-        new ExtractTextPlugin({ filename: 'css/[name].css',
-            disable: false,
-            allChunks: true
         }),
     ],
     devtool: 'source-map',
