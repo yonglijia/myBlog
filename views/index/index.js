@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Foot from '../../component/Foot/index.js';
 import Head from '../../component/Head/index.js';
-
+import { Button } from 'antd';
 import { Layout,Breadcrumb} from 'antd';
 const { Content } = Layout;
 ReactDOM.render(
@@ -19,6 +19,10 @@ ReactDOM.render(
                     <Breadcrumb.Item>App</Breadcrumb.Item>
                 </Breadcrumb>
                 <div style={{ background: '#fff', padding: 24,}}>Content</div>
+                <Button type="primary">Primary</Button>
+                <Button>Default</Button>
+                <Button type="dashed">Dashed</Button>
+                <Button type="danger">Danger</Button>
             </Content>
             <Foot />
         </Layout>

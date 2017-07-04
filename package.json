@@ -38,6 +38,8 @@
     "happypack": "^4.0.0-beta.1",
     "koa-webpack-dev-middleware": "^1.4.6",
     "koa-webpack-hot-middleware": "^1.0.3",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.4",
     "nodemon": "^1.8.1",
     "path": "^0.12.7",
     "react": "^15.6.1",
