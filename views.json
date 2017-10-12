@@ -1,6 +1,6 @@
 {
   "pageList": [{
-    "title": "首页",
+    "title": "首页1",
     "src": "./views/index/index.js"
   },{
     "title": "test",
